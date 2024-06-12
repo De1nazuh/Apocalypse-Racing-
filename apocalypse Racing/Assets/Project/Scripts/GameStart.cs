@@ -10,8 +10,7 @@ namespace Game
     {
 
 
-        [Inject , SerializeField] private GameObject _mainMenu;
-        [Inject, SerializeField] private Sprite _item;
+        
         private GameStateChanger _gameStateChanger = new();
         
 
@@ -20,7 +19,7 @@ namespace Game
         {
             DontDestroyOnLoad(gameObject);
 
-            //_gameStateChanger.ChangeState(new MainMenu_GameState());
+            _gameStateChanger.ChangeState(new MainMenu_GameState());
         }
     }
 }

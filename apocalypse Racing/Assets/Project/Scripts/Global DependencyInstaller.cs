@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-
-public class GlobalDependencyInstaller : MonoInstaller
+namespace Game
 {
-    [SerializeField] private GameObject _mainMenuPrefab;
-    [SerializeField] private Sprite _item;
-
-    public override void InstallBindings()
+    public class GlobalDependencyInstaller : MonoInstaller
     {
-        Container.Bind<GameObject>().FromInstance(_mainMenuPrefab);
-        Container.Bind<Sprite>().FromInstance(_item);
-    }
+        [SerializeField] private GameObject _mainMenuPrefab;
+        [SerializeField] private AudioService _audioService;
 
+        public override void InstallBindings()
+        {
+            Container.Bind<GameObject>().FromInstance(_mainMenuPrefab);
+            Container.Bind<AudioService>().FromInstance(_audioService);
+        }
+
+    }
 }

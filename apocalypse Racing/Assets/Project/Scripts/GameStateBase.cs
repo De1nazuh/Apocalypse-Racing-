@@ -5,6 +5,7 @@ namespace Game
 {
     public class GameStateBase
     {
+        public GameStateChanger gameStateChanger;
         public virtual void Enter()
         {
 

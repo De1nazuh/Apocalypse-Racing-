@@ -3,7 +3,10 @@ guid: daf3dc7910ab82c45ac09025f243268e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _uIFactory: {instanceID: 0}
+  - _audioService: {instanceID: 0}
+  - _CarScin: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

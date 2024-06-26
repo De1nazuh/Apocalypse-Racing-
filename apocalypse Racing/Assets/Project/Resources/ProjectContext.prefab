@@ -144,7 +144,7 @@ MonoBehaviour:
   _audioPlayer: {fileID: 3407053995058823960}
   _audios:
   - name: Back
-    clip: {fileID: 8300000, guid: 70db6a5d8067c374bbcef021d996f7d1, type: 3}
+    clip: {fileID: 8300000, guid: 5be91361350e44b498bc0faf23daba19, type: 3}
 --- !u!1 &1656269793564272159
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uIFactory: {fileID: 978260881991997066}
   _audioService: {fileID: 2032563097281985937}
+  _CarScin: {fileID: 11400000, guid: 82f984f0d20c9914eacbd9d044fd562e, type: 2}
 --- !u!1 &8204804650082109733
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,3 +340,4 @@ MonoBehaviour:
   _alUIs:
   - {fileID: 5517268606037400037, guid: f72a9028ba4068d498d9de5b5b8fb647, type: 3}
   - {fileID: 763917618837935967, guid: d5301274753e31a46bf4593e2cf0fdb0, type: 3}
+  - {fileID: 1818964393746725644, guid: 877301272f32de04eb061d0744965a36, type: 3}

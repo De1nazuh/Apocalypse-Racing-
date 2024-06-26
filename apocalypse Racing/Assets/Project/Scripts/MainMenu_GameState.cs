@@ -9,6 +9,7 @@ namespace Game
     {
         [Inject] private UIFactory _uIFactory;
         [Inject] private AudioService _audioService;
+        [Inject] private Test _CarScin;
 
         public override void Enter()
         {

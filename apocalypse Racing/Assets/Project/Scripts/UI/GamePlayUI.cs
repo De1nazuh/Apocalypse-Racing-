@@ -3,5 +3,5 @@ using UnityEngine.UI;
 
 public class GamePlayUI : UIBase
 {
-    public Button MenuButton;
+    public Button PauseButton;
 }

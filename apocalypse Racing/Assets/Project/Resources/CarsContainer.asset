@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2c797b57127d7438f434897880a8fe, type: 3}
+  m_Name: CarsContainer
+  m_EditorClassIdentifier: 
+  cars:
+  - name: 1
+    prefab: {fileID: 1636302872475550, guid: e6deb2c0efb370c429509e60495211c3, type: 3}
+    isOpen: 0
+  - name: 2
+    prefab: {fileID: 7624403157833489731, guid: fa06789b41431cf4eb16cb85c7d04b02, type: 3}
+    isOpen: 0
+  - name: 3
+    prefab: {fileID: 4105981937065569657, guid: 0f1862a6c93e75540811d616d912d4ea, type: 3}
+    isOpen: 0
+  - name: 4
+    prefab: {fileID: 7298082625359608542, guid: 6019938a24b213941bf4b7f1f35b917a, type: 3}
+    isOpen: 0

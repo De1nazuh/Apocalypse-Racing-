@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using Game.UI;
+using SO;
 
 namespace Game
 {
@@ -10,13 +11,13 @@ namespace Game
     {
         [SerializeField] private UIFactory _uIFactory;
         [SerializeField] private AudioService _audioService;
-        [SerializeField] private Test _CarScin;
+        [SerializeField] private CarScin _CarScin;
 
         public override void InstallBindings()
         {
             Container.Bind<UIFactory>().FromInstance(_uIFactory);
             Container.Bind<AudioService>().FromInstance(_audioService);
-            Container.Bind<Test>().FromInstance(_CarScin);
+            Container.Bind<CarScin>().FromInstance(_CarScin);
         }
 
     }

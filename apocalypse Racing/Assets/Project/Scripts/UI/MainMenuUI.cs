@@ -9,5 +9,6 @@ namespace Game.UI
     public class MainMenuUI : UIBase
     {
         public Button playButton;
+        public Button ShopButton;
     }
 }

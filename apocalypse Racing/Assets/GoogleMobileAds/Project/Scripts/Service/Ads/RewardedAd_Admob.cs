@@ -1,3 +1,6 @@
+using GoogleMobileAds.Api;
+using Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +8,10 @@ using UnityEngine;
 
 namespace Service.Ads
 {
-    public class RewardedAd_Admob : MonoBehaviour
+    public class RewardedAd_Admob : MonoBehaviour, IRewardedAd
     {
+        public bool isReady { get;  set; } = false;
+        public Action onReady { get; set; }
 
 #if UNITY_ANDROID
         private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
@@ -17,6 +22,8 @@ namespace Service.Ads
 #endif
 
         private RewardedAd _rewardedAd;
+
+        //public Action onReady => throw new NotImplementedException();
 
         private void Start()
         {
@@ -53,11 +60,18 @@ namespace Service.Ads
                               + ad.GetResponseInfo());
 
                     _rewardedAd = ad;
-                    ShowRewardedAd();
+
+                    isReady = true;
+                    onReady?.Invoke();
                 });
         }
 
         public void ShowRewardedAd()
+        {
+            
+        }
+
+        public void ShowRewarded(Action onRewardedShown)
         {
             const string rewardMsg = "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
 
@@ -66,6 +80,7 @@ namespace Service.Ads
                 _rewardedAd.Show((Reward reward) =>
                 {
                     Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+                    onRewardedShown?.Invoke();
                 });
             }
         }

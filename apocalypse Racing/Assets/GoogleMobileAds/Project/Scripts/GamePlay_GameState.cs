@@ -1,4 +1,6 @@
 using Game.UI;
+using Interfaces;
+using SO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +12,10 @@ namespace Game
     public class GamePlay_GameState : GameStateBase
     {
         [Inject] private UIFactory _uIFactory;
+        [Inject] private AudioService _audioService;
+        [Inject] private ICarSaveManager _carSaveManager;
+
+        private CarData _currentCarData;  
         
 
         public override void Enter()
@@ -19,6 +25,9 @@ namespace Game
             {
                 GamePlayUI GamePlay_UI_Copy = _uIFactory.GetUI<GamePlayUI>() as GamePlayUI;
                 GamePlay_UI_Copy.PauseButton.onClick.AddListener(GoToPauseMenu);
+
+                _currentCarData = _carSaveManager.GetCurrentCar();
+                Object.Instantiate(_currentCarData.prefab);
 
             };
         }

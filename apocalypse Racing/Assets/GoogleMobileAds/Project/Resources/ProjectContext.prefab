@@ -294,9 +294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uIFactory: {fileID: 978260881991997066}
   _audioService: {fileID: 2032563097281985937}
-  _CarScin: {fileID: 11400000, guid: 82f984f0d20c9914eacbd9d044fd562e, type: 2}
   _bannerAD: {fileID: 441430961786986963}
   _rewardedAd: {fileID: 6224869817410332771}
+  _carList: {fileID: 11400000, guid: 82f984f0d20c9914eacbd9d044fd562e, type: 2}
 --- !u!1 &5200558020990827092
 GameObject:
   m_ObjectHideFlags: 0

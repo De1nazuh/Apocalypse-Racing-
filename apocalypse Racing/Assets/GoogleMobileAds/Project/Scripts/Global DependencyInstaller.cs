@@ -14,12 +14,13 @@ namespace Game
     {
         [SerializeField] private UIFactory _uIFactory;
         [SerializeField] private AudioService _audioService;
-        [SerializeField] private CarScin _CarScin;
 
         [Header("Ads")]
         [SerializeField] private BannerAd _bannerAD;
         [SerializeField] private RewardedAd_Admob _rewardedAd;
 
+        [Header("Lists")]
+        [SerializeField] private CarScin _carList;
 
         public override void InstallBindings()
         {
@@ -27,9 +28,14 @@ namespace Game
           //контейнер //в каком виде                 \\какой обьект
             Container.Bind<UIFactory>().FromInstance(_uIFactory);
             Container.Bind<AudioService>().FromInstance(_audioService);
-            Container.Bind<CarScin>().FromInstance(_CarScin);
+            
 
+            
             Container.Bind<IRewardedAd>().FromInstance(_rewardedAd);
+
+            Container.Bind<CarScin>().FromInstance(_carList);
+            Container.Bind<ICarSaveManager>().FromInstance(_carList);
+
         }
 
     }

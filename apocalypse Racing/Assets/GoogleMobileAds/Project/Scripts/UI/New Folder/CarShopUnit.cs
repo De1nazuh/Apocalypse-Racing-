@@ -16,9 +16,11 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _carNameText;
         [SerializeField] private Image _CarIcon;
         [SerializeField] private Button _selectButton;
-
+        [SerializeField] private GameObject _lockedState;
         [SerializeField] private GameObject _selectedState;
         [Inject] private ICarSaveManager _carSaveManager;
+
+        private bool _isCarOpen => _carData.isDefault == true || _carData.isOpen == true;
 
         private CarData _carData;
 
@@ -33,7 +35,11 @@ namespace UI
             _carNameText.text = carData.name;
             _CarIcon.sprite = carData.icon;
 
+          
+            CheckIsOpen();
             CheckSelected(_carSaveManager.GetCurrentCar());
+
+            _carData.onChanged += CheckIsOpen;
         }
 
         private void OnEnable()
@@ -46,11 +52,35 @@ namespace UI
         {
             _selectButton.onClick.RemoveListener(Select);
             _carSaveManager.onCarSelected -= CheckSelected;
+
+            _carData.onChanged -= CheckIsOpen;
+
         }
 
         private void Select()
         {
-            _carSaveManager.SetCurrentCar(_carData);
+            if(_isCarOpen == true)
+            {
+                _carSaveManager.SetCurrentCar(_carData);
+            }
+            else
+            {
+                _carSaveManager.OpenCar(_carData);
+            }
+        }
+
+        private void CheckIsOpen()
+        {
+            // _lockedState.SetActive(_carData.isDefault == true || _carData.isDefault == true);
+
+            if (_isCarOpen == true)
+            {
+                _lockedState.SetActive(true);
+            }
+            else
+            {
+                _lockedState.SetActive(false);
+            }
         }
 
         private void CheckSelected(CarData carData)

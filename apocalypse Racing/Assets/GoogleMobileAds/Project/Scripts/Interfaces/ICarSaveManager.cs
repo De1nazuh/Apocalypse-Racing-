@@ -11,6 +11,7 @@ namespace Interfaces
         public Action<CarData> onCarSelected {  get; set; }
 
         public CarData GetCurrentCar();
+        public void OpenCar(CarData car);
         public void SetCurrentCar(CarData car);
     }
 }

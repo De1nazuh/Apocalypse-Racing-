@@ -28,8 +28,14 @@ namespace UI
         {
             InjectService.Inject(this);
         }
+
         public void Setup(CarData carData)
         {
+            InjectService.Inject(this);
+
+            _selectedState.SetActive(false);
+            _lockedState.SetActive(false);
+
             _carData = carData;
 
             _carNameText.text = carData.name;
@@ -39,6 +45,7 @@ namespace UI
             CheckIsOpen();
             CheckSelected(_carSaveManager.GetCurrentCar());
 
+            _carData.onChanged -= CheckIsOpen;
             _carData.onChanged += CheckIsOpen;
         }
 
@@ -50,6 +57,9 @@ namespace UI
 
         private void OnDisable()
         {
+            if (_carSaveManager == null) { return; }
+            if (_carData == null) { return; }
+
             _selectButton.onClick.RemoveListener(Select);
             _carSaveManager.onCarSelected -= CheckSelected;
 
@@ -73,27 +83,13 @@ namespace UI
         {
             // _lockedState.SetActive(_carData.isDefault == true || _carData.isDefault == true);
 
-            if (_isCarOpen == true)
-            {
-                _lockedState.SetActive(true);
-            }
-            else
-            {
-                _lockedState.SetActive(false);
-            }
+            _lockedState.SetActive(_isCarOpen == false);
         }
 
         private void CheckSelected(CarData carData)
         {
             //_selectedState.SetActive(_CarData == CarData);
-            if(_carData == carData)
-            {
-                _selectedState.SetActive(true);
-            }
-            else
-            {
-                _selectedState.SetActive(false);
-            }
+            _selectedState.SetActive(_carData == carData);
         }
     }
 }

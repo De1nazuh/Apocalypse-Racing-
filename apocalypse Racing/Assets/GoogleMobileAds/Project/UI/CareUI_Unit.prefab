@@ -632,8 +632,8 @@ RectTransform:
   - {fileID: 4753973494086341819}
   - {fileID: 3283209637272042798}
   - {fileID: 8383758265328287029}
-  - {fileID: 4438960285809329492}
   - {fileID: 3065888175872117858}
+  - {fileID: 4438960285809329492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -656,4 +656,5 @@ MonoBehaviour:
   _carNameText: {fileID: 3018978344806503704}
   _CarIcon: {fileID: 3757453218584924558}
   _selectButton: {fileID: 4430446701433502788}
+  _lockedState: {fileID: 7591852179903638403}
   _selectedState: {fileID: 7148239738361891853}

@@ -6,6 +6,7 @@ using Core.Car;
 using Interfaces;
 using System.Linq;
 using Zenject;
+using Game;
 
 namespace SO
 {
@@ -17,10 +18,19 @@ namespace SO
         public Action<CarData> onCarSelected { get; set; }
 
         public List<CarData> carsList = new();
-        [SerializeField] private CarData _currentCar;
+        private CarData _currentCar;
 
         [Inject] private IRewardedAd _rewardedAd;
 
+
+        public void Initialize()
+        {
+            InjectService.Inject(this);
+            foreach (CarData car in carsList)
+            {
+                car.isOpen = PlayerPrefs.GetString(car.name + "_opened") == true.ToString();
+            }
+        }
 
 
         public CarData GetCurrentCar()
@@ -63,7 +73,7 @@ namespace SO
             {
                 car.isOpen = true;
                                       //["BlueCar_opened"]
-                PlayerPrefs.GetString(car.name + "_opened", true.ToString());
+                PlayerPrefs.SetString(car.name + "_opened", true.ToString());
                 car.onChanged?.Invoke();
             });
         }

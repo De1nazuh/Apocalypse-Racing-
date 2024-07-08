@@ -66,21 +66,14 @@ namespace Service.Ads
                 });
         }
 
-        public void ShowRewardedAd()
-        {
-            
-        }
-
         public void ShowRewarded(Action onRewardedShown)
         {
-            const string rewardMsg = "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
-
             if (_rewardedAd != null && _rewardedAd.CanShowAd())
             {
                 _rewardedAd.Show((Reward reward) =>
                 {
-                    Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
                     onRewardedShown?.Invoke();
+                    LoadRewardedAd();
                 });
             }
         }

@@ -36,6 +36,8 @@ namespace Game
             Container.Bind<CarScin>().FromInstance(_carList);
             Container.Bind<ICarSaveManager>().FromInstance(_carList);
 
+            _carList.Initialize();
+
         }
 
     }

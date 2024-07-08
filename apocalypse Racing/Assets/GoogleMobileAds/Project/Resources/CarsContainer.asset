@@ -13,29 +13,23 @@ MonoBehaviour:
   m_Name: CarsContainer
   m_EditorClassIdentifier: 
   carsList:
-  - name: 
+  - name: one
     icon: {fileID: 21300000, guid: e420260b1a60af648a939b619f93cc92, type: 3}
     isDefault: 1
     prefab: {fileID: 8805466286824785619, guid: e6deb2c0efb370c429509e60495211c3, type: 3}
     isOpen: 0
-  - name: two
+  - name: ''';lk'';lk'
     icon: {fileID: 21300000, guid: 53a8ac0c87943e34bb133eeea8a463f6, type: 3}
     isDefault: 0
     prefab: {fileID: 8475554595075536590, guid: fa06789b41431cf4eb16cb85c7d04b02, type: 3}
-    isOpen: 0
+    isOpen: 1
   - name: three
     icon: {fileID: 21300000, guid: 30dff9215ed374c42bc5284c870ac976, type: 3}
     isDefault: 0
     prefab: {fileID: 7309056825542469074, guid: 6019938a24b213941bf4b7f1f35b917a, type: 3}
-    isOpen: 0
+    isOpen: 1
   - name: four
     icon: {fileID: 21300000, guid: d047ea82b39ef64408a0bea3d576ab2f, type: 3}
     isDefault: 0
     prefab: {fileID: 8567629748190284862, guid: 0f1862a6c93e75540811d616d912d4ea, type: 3}
-    isOpen: 0
-  _currentCar:
-    name: 
-    icon: {fileID: 21300000, guid: e420260b1a60af648a939b619f93cc92, type: 3}
-    isDefault: 1
-    prefab: {fileID: 8805466286824785619, guid: e6deb2c0efb370c429509e60495211c3, type: 3}
-    isOpen: 0
+    isOpen: 1

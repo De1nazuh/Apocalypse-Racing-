@@ -47,7 +47,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -144,7 +144,11 @@ MonoBehaviour:
   _audioPlayer: {fileID: 3407053995058823960}
   _audios:
   - name: Back
-    clip: {fileID: 8300000, guid: 5be91361350e44b498bc0faf23daba19, type: 3}
+    clip: {fileID: 8300000, guid: f3551cde5a46a354eac47b93804da678, type: 3}
+    loop: 1
+  - name: CarSound
+    clip: {fileID: 8300000, guid: e94ab6b350ea263449ff022547172df8, type: 3}
+    loop: 1
 --- !u!1 &1656269793564272159
 GameObject:
   m_ObjectHideFlags: 0

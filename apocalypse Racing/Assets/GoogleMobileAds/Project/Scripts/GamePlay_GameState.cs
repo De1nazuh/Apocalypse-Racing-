@@ -23,12 +23,13 @@ namespace Game
             InjectService.Inject(this);
             SceneManager.LoadSceneAsync("GamePlay").completed += (_) =>
             {
+
                 GamePlayUI GamePlay_UI_Copy = _uIFactory.GetUI<GamePlayUI>() as GamePlayUI;
                 GamePlay_UI_Copy.PauseButton.onClick.AddListener(GoToPauseMenu);
 
                 _currentCarData = _carSaveManager.GetCurrentCar();
                 Object.Instantiate(_currentCarData.prefab);
-
+                _audioService.StopAudio("Back");
             };
         }
 

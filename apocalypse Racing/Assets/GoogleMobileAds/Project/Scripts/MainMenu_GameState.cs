@@ -33,6 +33,7 @@ namespace Game
                     OpenMainMenu();
 
                     _audioService.PlayAudio("Back");
+                    
                 };
         }
         private void GoToGamePlay()

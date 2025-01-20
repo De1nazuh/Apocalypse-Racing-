@@ -24,7 +24,59 @@ namespace Game
                     _audioPlayer.clip = audio.clip;
                     _audioPlayer.Play();
                     break;
+
                 }
+                /*if (audio.loop == true)
+                {
+                    //пускай играет это аудио
+                    _audioPlayer.clip = audio.clip;
+                    _audioPlayer.Play();
+                    yield return new WaitForSeconds(0f);
+
+                }*/
+
+            }
+        }
+       /* public IEnumerator ReturnPlayAudio(string audioName)
+        {
+            AudioClip clip = null;
+            //перебери обьекты в списке
+            foreach (AudioClass audio in _audios)
+            {
+                //если данный обьект равен имени аудио 
+                if (audio.name == audioName)
+                {
+                    //пускай играет это аудио
+                    _audioPlayer.clip = audio.clip;
+                    _audioPlayer.Play();
+                    break;
+                }
+                if (audio.loop == true)
+                {
+                    //пускай играет это аудио
+                    _audioPlayer.clip = audio.clip;
+                    _audioPlayer.Play();
+                    yield return new WaitForSeconds(0f);
+
+                }
+            }
+        }*/
+
+        public void StopAudio(string audioName)
+        {
+            foreach (AudioClass audio in _audios)
+            {
+                //если данный обьект равен имени аудио 
+                if (audio.name == audioName)
+                {
+                    //пускай stop это аудио
+                    _audioPlayer.clip = audio.clip;
+                    _audioPlayer.Stop();
+                    break;
+
+                }
+                
+
             }
         }
 
@@ -35,5 +87,6 @@ namespace Game
     {
         public string name;
         public AudioClip clip;
+        public bool loop;
     }
 }
